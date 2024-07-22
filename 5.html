@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIE - Make It Easy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2a9d8f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #264653;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #2a9d8f;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .tab {
+            flex: 1;
+            padding: 10px;
+            background-color: #e9c46a;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .tab:not(:last-child) {
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #f4a261;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #264653;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #264653;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2a9d8f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MIE - Make It Easy</h1>
+    </header>
+    <nav>
+        <a href="#sign-in">تسجيل الدخول</a>
+        <a href="#info-universities">معلومات عن الجامعات</a>
+        <a href="#available-majors">التخصصات المتاحة</a>
+        <a href="#facilities">المرافق</a>
+        <a href="#activities">أنشطة الطلاب</a>
+        <a href="#services">الخدمات المتاحة</a>
+        <a href="#support">الدعم الأكاديمي</a>
+        <a href="#guidance">الإرشاد والمشورة</a>
+        <a href="#community">المجتمع والتواصل</a>
+        <a href="#other-services">خدمات أخرى</a>
+        <a href="#language">إعدادات اللغة</a>
+        <a href="#ai-icons">أيقونات الذكاء الاصطناعي</a>
+        <a href="#screen-reader">دعم قارئ الشاشة</a>
+    </nav>
+    <div class="container">
+        <div id="sign-in" class="section">
+            <h2>تسجيل الدخول</h2>
+            <form id="sign-in-form">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" class="form-control">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" class="form-control">
+                <label for="phone">الهاتف:</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+                <label for="disability">نوع الإعاقة:</label>
+                <input type="text" id="disability" name="disability" class="form-control">
+                <label for="education">المستوى التعليمي:</label>
+                <input type="text" id="education" name="education" class="form-control">
+                <label for="university">الجامعة:</label>
+                <input type="text" id="university" name="university" class="form-control">
+                <label for="college">الكلية:</label>
+                <input type="text" id="college" name="college" class="form-control">
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+        </div>
+        <div id="info-universities" class="section">
+            <h2>معلومات عن الجامعات</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'uni-details')">تفاصيل الجامعات</div>
+                <div class="tab" onclick="openTab(event, 'uni-rankings')">ترتيب الجامعات</div>
+                <div class="tab" onclick="openTab(event, 'uni-admission')">شروط القبول</div>
+            </div>
+            <div id="uni-details" class="tab-content active">
+                <p>تفاصيل عن الجامعات هنا.</p>
+            </div>
+            <div id="uni-rankings" class="tab-content">
+                <p>ترتيب الجامعات هنا.</p>
+            </div>
+            <div id="uni-admission" class="tab-content">
+                <p>شروط القبول في الجامعات هنا.</p>
+            </div>
+        </div>
+        <div id="available-majors" class="section">
+            <h2>التخصصات المتاحة</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'majors-science')">العلوم</div>
+                <div class="tab" onclick="openTab(event, 'majors-arts')">الآداب</div>
+                <div class="tab" onclick="openTab(event, 'majors-commerce')">التجارة</div>
+            </div>
+            <div id="majors-science" class="tab-content active">
+                <p>التخصصات العلمية هنا.</p>
+            </div>
+            <div id="majors-arts" class="tab-content">
+                <p>التخصصات الأدبية هنا.</p>
+            </div>
+            <div id="majors-commerce" class="tab-content">
+                <p>التخصصات التجارية هنا.</p>
+            </div>
+        </div>
+        <div id="facilities" class="section">
+            <h2>المرافق لطلاب ذوي الإعاقة</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'facilities-access')">الوصول</div>
+                <div class="tab" onclick="openTab(event, 'facilities-support')">الدعم</div>
+                <div class="tab" onclick="openTab(event, 'facilities-technology')">التكنولوجيا</div>
+            </div>
+            <div id="facilities-access" class="tab-content active">
+                <p>مرافق الوصول هنا.</p>
+            </div>
+            <div id="facilities-support" class="tab-content">
+                <p>مرافق الدعم هنا.</p>
+            </div>
+            <div id="facilities-technology" class="tab-content">
+                <p>مرافق التكنولوجيا هنا.</p>
+            </div>
+        </div>
+        <div id="activities" class="section">
+            <h2>أنشطة الطلاب</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'activities-sports')">الرياضة</div>
+                <div class="tab" onclick="openTab(event, 'activities-cultural')">الثقافية</div>
+                <div class="tab" onclick="openTab(event, 'activities-social')">الاجتماعية</div>
+            </div>
+            <div id="activities-sports" class="tab-content active">
+                <p>الأنشطة الرياضية هنا.</p>
+            </div>
+            <div id="activities-cultural" class="tab-content">
+                <p>الأنشطة الثقافية هنا.</p>
+            </div>
+            <div id="activities-social" class="tab-content">
+                <p>الأنشطة الاجتماعية هنا.</p>
+            </div>
+        </div>
+        <div id="services" class="section">
+            <h2>الخدمات المتاحة</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'services-academic')">الأكاديمية</div>
+                <div class="tab" onclick="openTab(event, 'services-personal')">الشخصية</div>
+                <div class="tab" onclick="openTab(event, 'services-financial')">المالية</div>
+            </div>
+            <div id="services-academic" class="tab-content active">
+                <p>الخدمات الأكاديمية هنا.</p>
+            </div>
+            <div id="services-personal" class="tab-content">
+                <p>الخدمات الشخصية هنا.</p>
+            </div>
+            <div id="services-financial" class="tab-content">
+                <p>الخدمات المالية هنا.</p>
+            </div>
+        </div>
+        <div id="support" class="section">
+            <h2>الدعم الأكاديمي</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'support-resources')">الموارد التعليمية</div>
+                <div class="tab" onclick="openTab(event, 'support-notes')">ملاحظات الدراسة</div>
+                <div class="tab" onclick="openTab(event, 'support-audiobooks')">الكتب الصوتية</div>
+                <div class="tab" onclick="openTab(event, 'support-videos')">الفيديوهات التعليمية</div>
+            </div>
+            <div id="support-resources" class="tab-content active">
+                <p>الموارد التعليمية هنا.</p>
+            </div>
+            <div id="support-notes" class="tab-content">
+                <p>ملاحظات الدراسة هنا.</p>
+            </div>
+            <div id="support-audiobooks" class="tab-content">
+                <p>الكتب الصوتية هنا.</p>
+            </div>
+            <div id="support-videos" class="tab-content">
+                <p>الفيديوهات التعليمية هنا.</p>
+            </div>
+        </div>
+        <div id="guidance" class="section">
+            <h2>الإرشاد والمشورة</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'guidance-academic')">الإرشاد الأكاديمي</div>
+                <div class="tab" onclick="openTab(event, 'guidance-psychological')">الإرشاد النفسي</div>
+                <div class="tab" onclick="openTab(event, 'guidance-university')">التغلب على تحديات الجامعة</div>
+            </div>
+            <div id="guidance-academic" class="tab-content active">
+                <p>الإرشاد الأكاديمي هنا.</p>
+            </div>
+            <div id="guidance-psychological" class="tab-content">
+                <p>الإرشاد النفسي هنا.</p>
+            </div>
+            <div id="guidance-university" class="tab-content">
+                <p>التغلب على تحديات الجامعة هنا.</p>
+            </div>
+        </div>
+        <div id="community" class="section">
+            <h2>المجتمع والتواصل</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'community-online')">المجتمع عبر الإنترنت</div>
+                <div class="tab" onclick="openTab(event, 'community-service')">التواصل مع مقدمي الخدمات</div>
+            </div>
+            <div id="community-online" class="tab-content active">
+                <p>المجتمع عبر الإنترنت هنا.</p>
+            </div>
+            <div id="community-service" class="tab-content">
+                <p>التواصل مع مقدمي الخدمات هنا.</p>
+            </div>
+        </div>
+        <div id="other-services" class="section">
+            <h2>خدمات أخرى</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'services-appointments')">تحديد مواعيد مع الأساتذة</div>
+                <div class="tab" onclick="openTab(event, 'services-rooms')">حجز غرف الدراسة</div>
+                <div class="tab" onclick="openTab(event, 'services-schedules')">تتبع الجداول الأكاديمية</div>
+            </div>
+            <div id="services-appointments" class="tab-content active">
+                <p>تحديد مواعيد مع الأساتذة هنا.</p>
+            </div>
+            <div id="services-rooms" class="tab-content">
+                <p>حجز غرف الدراسة هنا.</p>
+            </div>
+            <div id="services-schedules" class="tab-content">
+                <p>تتبع الجداول الأكاديمية هنا.</p>
+            </div>
+        </div>
+        <div id="language" class="section">
+            <h2>إعدادات اللغة</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'language-arabic')">العربية</div>
+                <div class="tab" onclick="openTab(event, 'language-english')">الإنجليزية</div>
+            </div>
+            <div id="language-arabic" class="tab-content active">
+                <p>إعدادات اللغة العربية هنا.</p>
+            </div>
+            <div id="language-english" class="tab-content">
+                <p>إعدادات اللغة الإنجليزية هنا.</p>
+            </div>
+        </div>
+        <div id="ai-icons" class="section">
+            <h2>أيقونات الذكاء الاصطناعي</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'ai-assistance')">المساعدة بالذكاء الاصطناعي</div>
+                <div class="tab" onclick="openTab(event, 'ai-faqs')">الأسئلة المتكررة والمساعدة الفورية</div>
+            </div>
+            <div id="ai-assistance" class="tab-content active">
+                <p>المساعدة بالذكاء الاصطناعي هنا.</p>
+            </div>
+            <div id="ai-faqs" class="tab-content">
+                <p>الأسئلة المتكررة والمساعدة الفورية هنا.</p>
+            </div>
+        </div>
+        <div id="screen-reader" class="section">
+            <h2>دعم قارئ الشاشة</h2>
+            <p>ميزات قراءة الشاشة للمستخدمين ضعاف البصر هنا.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 MIE - Make It Easy</p>
+    </footer>
+    <script>
+        function openTab(event, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        document.getElementById('sign-in-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('تم إرسال النموذج بنجاح!');
+        });
+
+        // Set the default active tab
+        document.addEventListener("DOMContentLoaded", function() {
+            var defaultTab = document.querySelector('.tab.active');
+            if (defaultTab) {
+                var defaultContentId = defaultTab.getAttribute('onclick').match(/'([^']+)'/)[1];
+                document.getElementById(defaultContentId).style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
